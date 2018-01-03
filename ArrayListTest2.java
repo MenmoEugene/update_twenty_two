@@ -1,12 +1,12 @@
 import java.util.*;
-//List¼¯ºÏÅĞ¶ÏÔªËØÊÇ·ñÏàÍ¬Ê±£¬ÒÀ¾İµÄÊÇÔªËØµÄequals·½·¨¡£
+//Listé›†åˆåˆ¤æ–­å…ƒç´ æ˜¯å¦ç›¸åŒæ—¶ï¼Œä¾æ®çš„æ˜¯å…ƒç´ çš„equalsæ–¹æ³•ã€‚
 class ArrayListTest2 
 {
 	public static void main(String[] args) 
 	{
 		ArrayList al = new ArrayList();
 		al.add(new Person("wangwu01",26));
-		al.add(new Person("wangwu01",26));//al.add(Object obj); Object obj = new Person("wangwu",26);ÀàĞÍÌáÉı
+		al.add(new Person("wangwu01",26));//al.add(Object obj); Object obj = new Person("wangwu",26);ç±»å‹æå‡
 		al.add(new Person("wangwu02",27));
 		al.add(new Person("wangwu03",28));
 		al.add(new Person("wangwu03",28));
@@ -19,14 +19,14 @@ class ArrayListTest2
 
 		while(it.hasNext())
 		{
-			Person p = (Person)it.next();//¸¸ÀàObjectÖĞÃ»ÓĞgetNameÕâ¸ö¹¦ÄÜ£¬ËùÒÔĞèÒªÏòÏÂ×ªĞÍ¡£
+			Person p = (Person)it.next();//çˆ¶ç±»Objectä¸­æ²¡æœ‰getNameè¿™ä¸ªåŠŸèƒ½ï¼Œæ‰€ä»¥éœ€è¦å‘ä¸‹è½¬å‹ã€‚
 			sop(p.getName()+"::"+p.getAge());
 		}
 	}
 
 	public static ArrayList singleElement(ArrayList al)
 	{
-		//¶¨ÒåÒ»¸öÁÙÊ±ÈİÆ÷
+		//å®šä¹‰ä¸€ä¸ªä¸´æ—¶å®¹å™¨
 		ArrayList newAl = new ArrayList();
 
 		Iterator it = al.iterator();
@@ -45,7 +45,6 @@ class ArrayListTest2
 		System.out.println(obj);
 	}
 }
-
 class Person
 {
 	private String name;
@@ -55,7 +54,7 @@ class Person
 		this.name = name;
 		this.age = age;
 	}
-
+	
 	public boolean equals(Object obj)
 	{
 		if(!(obj instanceof Person))
@@ -66,7 +65,6 @@ class Person
 
 		return this.name.equals(p.name) && this.age == p.age;
 	}
-
 	public String getName()
 	{
 		return name;
